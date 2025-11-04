@@ -21,7 +21,7 @@
             --light-gray: #f5f5f5;
             --text-dark: #212121;
             --text-light: #ffffff;
-            --accent-gold: #D4AF37;
+            --accent-gold: #D63737;
         }
 
         body {
@@ -482,14 +482,14 @@
         }
 
         .map-container {
-            width: 100%;
-            height: 500px;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .map-container iframe {
             width: 100%;
-            height: 100%;
-            border: 0;
+            height: 450px;
+            border: 3px solid var(--primary-color);
         }
 
         /* Square Payment Section */
@@ -796,13 +796,102 @@
     <script>
         // Reviews Array - EASILY ADD MORE REVIEWS HERE
         const reviews = [
-            { name: "Review Example 1", rating: 5, body: "" },
-            { name: "Review Example 2", rating: 5, body: "" },
-            { name: "Review Example 3", rating: 5, body: "" },
-            { name: "Review Example 4", rating: 5, body: "" },
-            { name: "Review Example 5", rating: 5, body: "" },
-            { name: "Review Example 6", rating: 5, body: "" }
-        ];
+    {
+        "name": "Heather Harris",
+        "rating": 5,
+        "body": "Was very professional and courteous, upfront and transparent about pricing, cleaned up after, it was a very pleasant experience will recommend to everyone I know!!!"
+    },
+    {
+        "name": "Joshua Eno",
+        "rating": 5,
+        "body": "They did great work and had great communication on what was going on. Straight forward on pricing no bs anywhere great guys!"
+    },
+    {
+        "name": "Charylet Lee",
+        "rating": 5,
+        "body": "Mr Taylor is amazing ! We are out of town people and he helped fix my truck quickly ! If you need a mechanic he’s your guy!"
+    },
+    {
+        "name": "Lyanna Grider",
+        "rating": 5,
+        "body": "Michael is very good at what he does and extremely knowledgeable! Not only does he have excellent pricing, but he also comes TO YOU and gets the job done in a timely manner. … More"
+    },
+    {
+        "name": "xxPro_gameryt1xx “kyle hagle”",
+        "rating": 5,
+        "body": "Good guy showed up got the part off for me and a good price for coming to my house"
+    },
+    {
+        "name": "Samantha Brown",
+        "rating": 5,
+        "body": "Fixed our radiator and got us back on the road! I am so blessed to have an honest mechanic at a reasonable price! He was very nice and got the job done fast!"
+    },
+    {
+        "name": "Calvin's family",
+        "rating": 5,
+        "body": "Excellent service, very reasonable price . Done an amazing job fixing my car, highly recommend this company 10 out of 10"
+    },
+    {
+        "name": "Terri Nobles Modia",
+        "rating": 5,
+        "body": "Searches for the best deal and then came back to make sure it was working properly!! Highly recommend l."
+    },
+    {
+        "name": "Laycin Grider",
+        "rating": 5,
+        "body": "Michael is a pro. My truck was leaking antifreeze, and I was worried it was something major. Michael diagnosed the problem quickly and explained everything clearly. The repair was done efficiently, and the price was very fair. It's rare to find a mechanic who is both skilled and trustworthy. Highly recommend for any diesel work!"
+    },
+    {
+        "name": "Aleshia Sanders",
+        "rating": 5,
+        "body": "I highly recommend Michael for your auto repair and maintenance needs. He was able to come out very quickly. Michael not only went above and beyond finding/resolving the issue but educated me on my vehicle as well."
+    },
+    {
+        "name": "Chris Vann",
+        "rating": 5,
+        "body": "I have had Michael come out now on several different vehicles and without fail not only does he have the knowledge but the tools required for these niche cars. He has worked on my Nissan, VW, and my BMW. He was even able to save my … More"
+    },
+    {
+        "name": "Mark Heinen",
+        "rating": 5,
+        "body": "Knowledgeable, Punctual, friendly and professional. When I had a slight emergency with one of my semi’s at work, he was able to make time to come out and take care of the problem."
+    },
+    {
+        "name": "Jennifer Acosta",
+        "rating": 5,
+        "body": "Michael was amazing . He came out and got the job done really fast , affordable, and now oil is changed and fluids are filled 😁😊 …"
+    },
+    {
+        "name": "Susan Ghiassi",
+        "rating": 5,
+        "body": "Had a coolant leak that dealership supposedly fixed for over $400 and not 2 months later, still losing coolant. Michael came over to my house and diagnosed issue and had it repaired in no time. Best service by far from beginning to end."
+    },
+    {
+        "name": "Cooper Smith",
+        "rating": 5,
+        "body": "He was quick to find out the problem and get it fixed. He was also very affordable and fair pricing. Very happy with the service I received."
+    },
+    {
+        "name": "Robert Rainwater",
+        "rating": 5,
+        "body": "Awesome guy, Awesome service, very knowledgeable, he is the only mechanic that I let work on my truck. I highly recommend him"
+    },
+    {
+        "name": "Jerry Bethel",
+        "rating": 5,
+        "body": "He showed up when he said he would, & he did the Work efficiently and in a timely manner. I would recommend Taylor’s Diesel & Equipment Services to anyone needing Mechanic work…"
+    },
+    {
+        "name": "Zane Grider",
+        "rating": 5,
+        "body": "Very good communication. Was at my house on time (actually a little early), went right to work. When he left, there was ABSOLUTELY no evidence that he had even been there, everything was clean and just as he found it. He fixed my diesel … More"
+    },
+    {
+        "name": "Trey Morgan",
+        "rating": 5,
+        "body": "Very friendly, efficient, and quick. Worked hard to make sure that I was a happy customer by the end of the job, showed up fast did not make me have to wait. I appreciate yall very much and I highly recommend!!"
+    }
+];
 
         const reviewsPerPage = 6;
         let currentReviewIndex = 0;
