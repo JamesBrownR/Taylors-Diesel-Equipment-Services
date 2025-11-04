@@ -487,7 +487,7 @@
         }
 
         .map-container iframe {
-            width: 100%;
+            width: 50%;
             height: 450px;
             border: 3px solid var(--primary-color);
         }
@@ -893,55 +893,34 @@
     }
 ];
 
-        const reviewsPerPage = 6;
-        let currentReviewIndex = 0;
+       let currentlyShowing = 6;
 
-        function renderReviews(startIndex, endIndex) {
-            const reviewsList = document.getElementById('reviews-list');
-            const reviewsToShow = reviews.slice(startIndex, endIndex);
+        function renderReviews() {
+            const container = document.getElementById('reviewsContainer');
+            container.innerHTML = '';
 
-            reviewsToShow.forEach(review => {
+            for (let i = 0; i < Math.min(currentlyShowing, reviews.length); i++) {
+                const review = reviews[i];
                 const reviewCard = document.createElement('div');
                 reviewCard.className = 'review-card';
+                
+                const stars = '★'.repeat(review.rating);
+                
                 reviewCard.innerHTML = `
                     <div class="review-header">
-                        <div class="reviewer-name">${review.name}</div>
-                        <div class="stars">${'★'.repeat(review.rating)}</div>
+                        <span class="reviewer-name">${review.name}</span>
+                        <span class="stars">${stars}</span>
                     </div>
-                    ${review.body ? `<div class="review-body">${review.body}</div>` : ''}
+                    ${review.body ? `<p class="review-body">${review.body}</p>` : ''}
                 `;
-                reviewsList.appendChild(reviewCard);
-            });
+                
+                container.appendChild(reviewCard);
+            }
 
-            currentReviewIndex = endIndex;
+            updateShowMoreButton();
         }
 
         function updateShowMoreButton() {
-            const showMoreBtn = document.getElementById('show-more-reviews');
-            const remainingReviews = reviews.length - currentReviewIndex;
-
-            if (remainingReviews > 0) {
-                showMoreBtn.classList.remove('hidden');
-                const nextBatch = Math.min(remainingReviews, reviewsPerPage);
-                showMoreBtn.textContent = `Show ${nextBatch} More Review${nextBatch !== 1 ? 's' : ''} (Total ${remainingReviews})`;
-            } else {
-                showMoreBtn.classList.add('hidden');
-            }
-        }
-
-        document.getElementById('show-more-reviews').addEventListener('click', function() {
-            const nextIndex = Math.min(currentReviewIndex + reviewsPerPage, reviews.length);
-            renderReviews(currentReviewIndex, nextIndex);
-            updateShowMoreButton();
-        });
-
-        // Initial render
-        renderReviews(0, Math.min(reviewsPerPage, reviews.length));
-        updateShowMoreButton();
-
-        
-
-                function updateShowMoreButton() {
             const btn = document.getElementById('showMoreBtn');
             const remaining = reviews.length - currentlyShowing;
 
