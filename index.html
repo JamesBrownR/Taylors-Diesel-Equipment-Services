@@ -484,7 +484,7 @@
         .map-container {
             margin-top: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-              width: 50%;
+              width: 450%;
         }
 
         .map-container iframe {
@@ -897,7 +897,7 @@
        let currentlyShowing = 6;
 
         function renderReviews() {
-            const container = document.getElementById('reviewsContainer');
+            const container = document.getElementById('reviews-list')
             container.innerHTML = '';
 
             for (let i = 0; i < Math.min(currentlyShowing, reviews.length); i++) {
@@ -922,7 +922,7 @@
         }
 
         function updateShowMoreButton() {
-            const btn = document.getElementById('showMoreBtn');
+            const btn = document.getElementById('show-more-reviews');
             const remaining = reviews.length - currentlyShowing;
 
             if (remaining > 0) {
@@ -940,7 +940,7 @@
 
         // Initialize reviews on page load
         renderReviews();
-
+        document.getElementById('show-more-reviews').addEventListener('click', showMoreReviews);
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
