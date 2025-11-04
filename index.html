@@ -939,18 +939,7 @@
         renderReviews(0, Math.min(reviewsPerPage, reviews.length));
         updateShowMoreButton();
 
-        // Contact Form Handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            const subject = encodeURIComponent('Contact Form Submission from ' + name);
-            const body = encodeURIComponent(
-                'Name
+        
 
                 function updateShowMoreButton() {
             const btn = document.getElementById('showMoreBtn');
