@@ -209,10 +209,23 @@
             }
         }
 
-        /* Section Styles */
-        section {
-            padding: 80px 20px;
-        }
+     /* Section Styles */
+section {
+    padding: 100px 20px;
+}
+
+/* Add extra spacing for specific sections */
+#why-choose-us {
+    padding-top: 120px !important;
+}
+
+#our-work {
+    padding-top: 120px !important;
+}
+
+#service-area {
+    padding-top: 120px !important;
+}
 
         .container {
             max-width: 1200px;
@@ -292,12 +305,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
     gap: 30px;
-    justify-content: center;          /* now works because we limit max width */
+    justify-content: center;
     margin: 40px auto 0;
-    max-width: 400px;                /* keep it from stretching forever */
+    max-width: 1200px;
     padding: 0 20px;
 }
-
 /* optional – make cards the same height */
 .review-card {
     background: #fff;
@@ -960,8 +972,7 @@
     </footer>
 
     <script>
-        // Reviews Array - EASILY ADD MORE REVIEWS HERE
-        const reviews = // Reviews Array - Add this to replace the empty reviews array in your HTML
+      
 const reviews = [
     // Google Reviews
     {
