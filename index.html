@@ -294,81 +294,102 @@ section {
             line-height: 1.7;
         }
 
-         /* Reviews Section */
-     /* ---- 1. Reviews Section ---- */
+  /* Reviews Section - REPLACE THE EXISTING REVIEWS CSS WITH THIS */
 #reviews {
     background-color: var(--light-gray);
-    text-align: center;               /* fallback for older browsers */
 }
 
 .reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
-    gap: 30px;
-    justify-content: center;
-    margin: 40px auto 0;
     max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
 }
-/* optional – make cards the same height */
+
+#reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
 .review-card {
     background: #fff;
     padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;                     /* equal height in a row */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: all 0.3s;
 }
 
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
 
-        .reviewer-name {
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 1.1em;
-        }
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+}
 
-        .stars {
-            color: var(--secondary-color);
-            font-size: 1.2em;
-        }
+.reviewer-name {
+    font-weight: bold;
+    color: var(--text-dark);
+    font-size: 1.1em;
+}
 
-        .review-body {
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+.stars {
+    color: #ffc107;
+    font-size: 1.2em;
+    white-space: nowrap;
+}
 
-        .reviews-hidden {
-            display: none;
-        }
+.review-body {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
 
-        .show-more-btn {
-            display: block;
-            margin: 40px auto 0;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 40px;
-            font-size: 1.1em;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.review-source {
+    font-size: 0.85em;
+    color: #888;
+    font-style: italic;
+}
 
-        .show-more-btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--dark-bg);
-        }
+.show-more-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .show-more-btn.hidden {
-            display: none;
-        }
+.show-more-btn:hover {
+    background-color: #a01828;
+}
+
+.show-more-btn.hidden {
+    display: none;
+}
+
+/* Responsive for reviews */
+@media (max-width: 768px) {
+    #reviews-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .review-card {
+        padding: 20px;
+    }
+}
 
         /* Contact Section */
         #contact {
@@ -1205,31 +1226,40 @@ const reviews = [
 
        let currentlyShowing = 6;
 
-        function renderReviews() {
-            const container = document.getElementById('reviews-list')
-            container.innerHTML = '';
+     // REPLACE THE renderReviews() FUNCTION WITH THIS:
 
-            for (let i = 0; i < Math.min(currentlyShowing, reviews.length); i++) {
-                const review = reviews[i];
-                const reviewCard = document.createElement('div');
-                reviewCard.className = 'review-card';
-                
-                const stars = '★'.repeat(review.rating);
-                
-                reviewCard.innerHTML = `
-                    <div class="review-header">
-                        <span class="reviewer-name">${review.name}</span>
-                        <span class="stars">${stars}</span>
-                    </div>
-                    ${review.body ? `<p class="review-body">${review.body}</p>` : ''}
-                `;
-                
-                container.appendChild(reviewCard);
-            }
+function renderReviews() {
+    const container = document.getElementById('reviews-list');
+    container.innerHTML = '';
 
-            updateShowMoreButton();
-        }
+    for (let i = 0; i < Math.min(currentlyShowing, reviews.length); i++) {
+        const review = reviews[i];
+        const reviewCard = document.createElement('div');
+        reviewCard.className = 'review-card';
+        
+        const stars = '★'.repeat(review.rating);
+        
+        // Source badge emoji
+        const sourceEmoji = {
+            'Google': '⭐',
+            'Facebook': '📘',
+            'BBB': '🏆'
+        };
+        
+        reviewCard.innerHTML = `
+            <div class="review-header">
+                <span class="reviewer-name">${review.name}</span>
+                <span class="stars">${stars}</span>
+            </div>
+            ${review.body ? `<p class="review-body">${review.body}</p>` : ''}
+            <p class="review-source">${sourceEmoji[review.source] || ''} ${review.source} Review</p>
+        `;
+        
+        container.appendChild(reviewCard);
+    }
 
+    updateShowMoreButton();
+}
         function updateShowMoreButton() {
             const btn = document.getElementById('show-more-reviews');
             const remaining = reviews.length - currentlyShowing;
