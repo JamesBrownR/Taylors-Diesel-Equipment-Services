@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taylors Diesel & Equipment Services - Professional Diesel Repair in Oklahoma City</title>
+   <title>Taylors Diesel - Mobile Mechanic | Cars, Trucks, Farm Equipment | Oklahoma City</title>
+<meta name="description" content="Honest, fair-priced mobile mechanic service in OKC. No part markup, transparent pricing. Cars, trucks, farm equipment, construction machinery. Call (405) 230-6533">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -510,6 +511,32 @@
     display: block;
 }
 
+        /* Work Gallery */
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.work-item {
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.work-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.work-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
         /* Square Payment Section */
         #square-payment {
             background-color: white;
@@ -644,57 +671,103 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>TAYLORS DIESEL & EQUIPMENT SERVICES</h1>
-            <p class="hero-subtitle">Professional Diesel Engine Repair & Equipment Services</p>
-            
-            <div class="cta-buttons">
-                <a href="tel:+14052306533" class="btn btn-primary">Call Now</a>
-                <a href="#contact" class="btn btn-secondary">Get a Quote</a>
-            </div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>TAYLORS DIESEL & EQUIPMENT SERVICES</h1>
+        <p class="hero-subtitle">Expert Repair for Cars, Trucks, Farm & Construction Equipment</p>
+        <p class="hero-owner" style="font-size: clamp(1.1rem, 3vw, 1.4rem); margin-bottom: 20px;">Mobile Diesel & Gas Engine Repair - We Come To You!</p>
+        
+        <div class="cta-buttons">
+            <a href="tel:+14052306533" class="btn btn-primary">Call Now</a>
+            <a href="#contact" class="btn btn-secondary">Request Quote</a>
         </div>
-        <div class="scroll-indicator">Scroll Down ↓</div>
-    </section>
+    </div>
+    <div class="scroll-indicator">Scroll Down ↓</div>
+</section>
 
     <!-- Services Section -->
+   <!-- Services Section -->
     <section id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Gas, Diesel, Farm, Construction, Semi On-Highway & Off-Highway
+            </p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Diesel Engine Repair</h3>
-                    <p>Expert diagnosis and repair of diesel engines for all makes and models. Quality workmanship guaranteed.</p>
+                    <div class="service-icon">🚗</div>
+                    <h3>Automotive Repair</h3>
+                    <p>Expert repair for cars and trucks. Yes, we work on regular vehicles too - not just diesel!</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚜</div>
+                    <h3>Farm Equipment</h3>
+                    <p>Tractors, combines, and all agricultural machinery. Keeping your farm running smoothly.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Construction Equipment</h3>
+                    <p>Excavators, loaders, bulldozers, and more. Professional service for heavy machinery.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
-                    <h3>Equipment Maintenance</h3>
-                    <p>Comprehensive maintenance services to keep your equipment running at peak performance.</p>
+                    <h3>Diesel & Gas Engines</h3>
+                    <p>Comprehensive engine repair and maintenance for both diesel and gasoline engines.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🚛</div>
-                    <h3>Fleet Services</h3>
-                    <p>Reliable fleet maintenance and repair services to minimize downtime and maximize efficiency.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>Diagnostics</h3>
-                    <p>Advanced diagnostic services using state-of-the-art equipment to identify issues quickly and accurately.</p>
+                    <div class="service-icon">💧</div>
+                    <h3>Hydraulic Systems</h3>
+                    <p>Expert hydraulic repair and maintenance for all types of equipment and machinery.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚡</div>
-                    <h3>Emergency Service</h3>
-                    <p>Available when you need us most. Fast response times for emergency repairs and breakdowns.</p>
+                    <h3>Electrical Systems</h3>
+                    <p>Electrical diagnostics and repair for vehicles and equipment of all kinds.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✅</div>
-                    <h3>Preventive Maintenance</h3>
-                    <p>Regular maintenance programs designed to prevent costly repairs and extend equipment life.</p>
+                    <div class="service-icon">🚙</div>
+                    <h3>Mobile Service</h3>
+                    <p><strong>We Come To You!</strong> On-site repairs at your location for your convenience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>Semi Trucks</h3>
+                    <p>On-highway and off-highway semi truck repair and maintenance services.</p>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Why Choose Us Section -->
+<section id="why-choose-us" style="background-color: white;">
+    <div class="container">
+        <h2 class="section-title">Honest Work, Fair Pricing</h2>
+        <p style="text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            What sets us apart from other repair shops
+        </p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>No Part Markup</h3>
+                <p>I don't do a price markup on parts. The only way I do a price markup is if I'm going to be out $500 or more for a week or two. I'll do a markup on parts, and I'll tell the customer that.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>You Keep Your Parts</h3>
+                <p>If you take your car to a shop or your truck, you say 'let me have these parts back,' they don't want to give them back. A lot of them will get them back. I give them back.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✅</div>
+                <h3>Honest Assessment</h3>
+                <p>If I can't do it, I'll be honest enough to tell you I can't do it. I won't tear your stuff up. I won't rip you off. I won't make you bring it and keep it for a few months.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>No Hidden Fees</h3>
+                <p>I don't cut nothing short. I don't rip people off. I show people - I don't necessarily have to do this, you can easily do this.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
      <!-- Our Work Section -->
     <section id="our-work" style="background-color: white;">
@@ -739,6 +812,57 @@
             </div>
         </div>
     </section>
+
+        <!-- Service Area Section -->
+<section id="service-area" style="background-color: white;">
+    <div class="container">
+        <h2 class="section-title">We Serve All of Central Oklahoma</h2>
+        <p style="text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 40px;">
+            Mobile service available throughout the Oklahoma City metro area
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; text-align: center;">
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Oklahoma City</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Edmond</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Guthrie</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Piedmont</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Midwest City</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">McLoud</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Harrah</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Purcell</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Newcastle</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Shawnee</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Chickasha</h4>
+            </div>
+            <div style="padding: 20px; background: var(--light-gray);">
+                <h4 style="color: var(--primary-red); font-size: 1.1rem; margin-bottom: 5px;">Sapulpa</h4>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 1.1rem; color: var(--primary-red); margin-top: 30px; font-weight: 600;">
+            And surrounding areas - call to confirm service availability!
+        </p>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact">
